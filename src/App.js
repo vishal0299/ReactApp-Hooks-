@@ -1,6 +1,17 @@
 import React from 'react';
+import UserTable from './tables/UserTable'
 
 const App = () => {
+  const initialBookState = {
+    title: '',
+    available: false
+  };
+
+  const [book, setBook] = React.useState(initialBookState);
+
+  const updateBook = book => {
+    setBook({ title: book.title, available: book.available });
+  };
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
@@ -10,6 +21,7 @@ const App = () => {
         </div>
         <div className="flex-large">
           <h2>View users</h2>
+          <UserTable />
         </div>
       </div>
     </div>
