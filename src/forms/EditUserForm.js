@@ -9,6 +9,10 @@ const EditUserForm = props => {
     setUser({ ...user, [name]: value })
   }
 
+  React.useEffect(() => {
+    setUser(props.currentUser)
+  }, [props])
+
   return (
     <form
       onSubmit={event => {
